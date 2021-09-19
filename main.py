@@ -28,7 +28,11 @@ def grid_tuple(n):  # function that create a list of tuple for the grid layout (
 
     return lista_tuple
 
-def list_matrix(num):
+def matrix_construction():
+    pass
+    
+    
+def list_matrix(num): 
     
     list_a =[]
     
@@ -59,6 +63,8 @@ def main_window(): # COMMENTAAAAA
     
     i=0
     
+    list_entry =[] # list that contaion al the Entry so i can iterable 
+    
     for element in list_val :
        
         r = list_grid[i][0]
@@ -68,13 +74,12 @@ def main_window(): # COMMENTAAAAA
         
         globals()['Entry_'+m]= Entry(main_win,width=10,font=font_2).grid(row= r, column = c,padx=20,pady=20)
         
+        list_entry.append( globals()['Entry_'+m])
+        
         i+=1
         
 
 
-    #creare un ciclo for che aggiunga per ogni elemento in lis_matrix (tuple) un numero partendo da zero con un contatore.
-    # creare un ciclo che prenda il valore nella posizione n (contatore) delle due liste e crei un entry box con global e gli assegni
-    # un grid layout come definito nella tupla ( Entry.grid(row=list_matrix[n[0]], col = list_matrix[n[1]])    )
 
 
 
@@ -88,9 +93,11 @@ root.geometry('200x300')
 root.overrideredirect(False)
 root.resizable(height = False, width = False)
 
+
 #IMAGE SECTION ==========================================================================================================================================================================================================
 
 image_bg_1 = PhotoImage(file='bg_1.png')
+image_bt_1 = PhotoImage(file='button_entry.png')
 
 
 #END IMAGE SECTION ==========================================================================================================================================================================================================
@@ -105,8 +112,8 @@ Entry_row.place(x=80,y=72)
 Entry_col = Entry(root,width=10,bg='#414950',fg='#B1B1B1',highlightthickness=0,	relief=FLAT, font= font_2,insertbackground='#B1B1B1')
 Entry_col.place(x=80,y=136)
 
-Button_main_window = Button(root,text='Commit', width=5,font = font_1, bg='white',fg='#B1B1B1',highlightthickness=0,relief=FLAT,command = main_window)
-Button_main_window.place(x=50,y=200)
+Button_main_window = Button(root,text='Commit',image=image_bt_1, bg='red',highlightthickness=0,borderwidth=0,relief=FLAT,command = main_window)
+Button_main_window.place(x=75,y=210)
 
 
 
