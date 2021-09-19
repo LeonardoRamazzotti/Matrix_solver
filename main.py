@@ -72,7 +72,9 @@ def main_window(): # COMMENTAAAAA
              
         m = str(i)
         
-        globals()['Entry_'+m]= Entry(main_win,width=10,font=font_2).grid(row= r, column = c,padx=20,pady=20)
+      
+        globals()['Label_'+m]= Label(main_win,image=entry_bg).grid(row= r, column = c,padx=20,pady=20)
+        globals()['Entry_'+m]= Entry(main_win,width=8,font=font_2,bg='#0475BD',fg='white',highlightthickness=0,insertbackground='white',	relief=FLAT).grid(row= r, column = c,padx=20,pady=20)
         
         list_entry.append( globals()['Entry_'+m])
         
@@ -98,7 +100,7 @@ root.resizable(height = False, width = False)
 
 image_bg_1 = PhotoImage(file='bg_1.png')
 image_bt_1 = PhotoImage(file='button_entry.png')
-
+entry_bg =PhotoImage(file='entry_bg.png')
 
 #END IMAGE SECTION ==========================================================================================================================================================================================================
 
