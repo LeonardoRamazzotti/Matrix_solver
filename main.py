@@ -28,40 +28,49 @@ def grid_tuple(n):  # function that create a list of tuple for the grid layout (
 
     return lista_tuple
 
+def list_matrix(num):
+    
+    list_a =[]
+    
+    i=0
+    while i < num:
+        list_a.append(i)
+        i+=1
+        
+        
+    return list_a
 
 # COMMENTAAAAA
 
 def main_window(): # COMMENTAAAAA
     main_win = Toplevel(root)
     main_win.title('Matrix Solver')
-    main_win.geometry('600x700')
+    main_win.geometry('700x600')
 
     row = int(Entry_row.get())  
     col = int(Entry_col.get())  
     
-    list_row =[]
-    list_matrix = []
-
-    list_grid = grid_tuple(row)
-
-    i=0
-
-    while i < row:
-        j=0
-        while j < col :
+    n=row*col
     
-            val = list_tot[j]
-            list_row.append(val)
-            j+=1
-        list_matrix.append(list_row)
-        list_row = []
-        c=0
-        while c  < col:
-            list_grid.pop(0)
-            c+=1
-        c=0
+    
+    list_grid= grid_tuple(row)
+    
+    list_val = list_matrix(n)
+    
+    i=0
+    
+    for element in list_val :
+       
+        r = list_grid[i][0]
+        c = list_grid[i][1]    
+             
+        m = str(i)
+        
+        globals()['Entry_'+m]= Entry(main_win,width=10,font=font_2).grid(row= r, column = c,padx=20,pady=20)
+        
         i+=1
-        # aggiungere nei cicli la creazione delle variabili
+        
+
 
     #creare un ciclo for che aggiunga per ogni elemento in lis_matrix (tuple) un numero partendo da zero con un contatore.
     # creare un ciclo che prenda il valore nella posizione n (contatore) delle due liste e crei un entry box con global e gli assegni
