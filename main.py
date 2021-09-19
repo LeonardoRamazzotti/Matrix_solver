@@ -112,7 +112,7 @@ Entry_row.place(x=80,y=72)
 Entry_col = Entry(root,width=10,bg='#414950',fg='#B1B1B1',highlightthickness=0,	relief=FLAT, font= font_2,insertbackground='#B1B1B1')
 Entry_col.place(x=80,y=136)
 
-Button_main_window = Button(root,text='Commit',image=image_bt_1, bg='red',highlightthickness=0,borderwidth=0,relief=FLAT,command = main_window)
+Button_main_window = Button(root,text='Commit',image=image_bt_1, bg='#3A4249',highlightthickness=0,borderwidth=0,relief=FLAT,command = main_window)
 Button_main_window.place(x=75,y=210)
 
 
