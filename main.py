@@ -49,7 +49,8 @@ def list_matrix(num):
 def main_window(): # COMMENTAAAAA
     main_win = Toplevel(root)
     main_win.title('Matrix Solver')
-    main_win.geometry('700x600')
+    main_win.geometry('1000x700')
+    main_win.config(bg = '#32373D')
 
     row = int(Entry_row.get())  
     col = int(Entry_col.get())  
@@ -73,13 +74,21 @@ def main_window(): # COMMENTAAAAA
         m = str(i)
         
       
-        globals()['Label_'+m]= Label(main_win,image=entry_bg).grid(row= r, column = c,padx=20,pady=20)
+        globals()['Label_'+m]= Label(main_win,image=entry_bg,bg='#32373D').grid(row= r, column = c,padx=20,pady=20)
         globals()['Entry_'+m]= Entry(main_win,width=8,font=font_2,bg='#0475BD',fg='white',highlightthickness=0,insertbackground='white',	relief=FLAT).grid(row= r, column = c,padx=20,pady=20)
         
         list_entry.append( globals()['Entry_'+m])
         
         i+=1
         
+    Frame_bg = Frame(main_win, width=800,height=400,bg='#32373D')
+    Frame_bg.grid(row=row+1, column = 0,columnspan=3 )
+
+    label_main = Label(Frame_bg,image=bg_main,bg='#32373D')
+    label_main.place(x=0,y=250)
+    
+    Button_resolve = Button(Frame_bg,image=image_bt_2,bg='#484B4F',highlightthickness=0,borderwidth=0,relief=FLAT)
+    Button_resolve.place(x=575,y=261)
 
 
 
@@ -101,6 +110,8 @@ root.resizable(height = False, width = False)
 image_bg_1 = PhotoImage(file='bg_1.png')
 image_bt_1 = PhotoImage(file='button_entry.png')
 entry_bg =PhotoImage(file='entry_bg.png')
+bg_main =PhotoImage(file='bg_main.png')
+image_bt_2 = PhotoImage(file='resolv_bt.png')
 
 #END IMAGE SECTION ==========================================================================================================================================================================================================
 
